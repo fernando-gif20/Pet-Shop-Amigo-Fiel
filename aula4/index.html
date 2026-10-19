@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CineMax</h1>
+        <p>Os melhores filmes em um só lugar!</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#filmes">Filmes</a>
+        <a href="#destaque">Destaque</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+
+        <section id="inicio" class="apresentacao">
+            <h2>Bem-vindo ao CineMax</h2>
+            <p>Descubra filmes incríveis para todos os gostos.</p>
+        </section>
+
+        <section id="filmes">
+            <h2>Filmes em destaque</h2>
+
+            <div class="lista-cards">
+
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.l-YfCAtldIBoez7fF0pPdQAAAA?w=203&h=295&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="Missão Extrema">
+                    <h3>Missão Extrema</h3>
+                    <span class="categoria">Ação</span>
+                    <p>Uma equipe precisa impedir uma grande ameaça mundial.</p>
+                    <p class="preco">Ingresso: R$ 28,90</p>
+                    <button onclick="comprar('Missão Extrema', 28.90)">
+                        Comprar
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.9aX_3OFdZY29-x_EAWFWjQAAAA?w=203&h=304&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="Amor em Paris">
+                    <h3>Amor em Paris</h3>
+                    <span class="categoria">Romance</span>
+                    <p>Uma emocionante história de amor na cidade luz.</p>
+                    <p class="preco">Ingresso: R$ 25,90</p>
+                    <button onclick="comprar('Amor em Paris', 25.90)">
+                        Comprar
+                    </button>
+                </div>
+
+                <div class="card">
+                    <img
+                        src="https://th.bing.com/th/id/OIP.YZHpgaF2UPibj3IDdisgeQHaKk?w=203&h=289&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="O Mistério da Ilha">
+                    <h3>O Mistério da Ilha</h3>
+                    <span class="categoria">Suspense</span>
+                    <p>Segredos antigos colocam todos em perigo.</p>
+                    <p class="preco">Ingresso: R$ 30,90</p>
+                    <button onclick="comprar('O Mistério da Ilha', 30.90)">
+                        Comprar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        <br><br><br><br><br>
+        <section id="destaque" class="destaque">
+            <h2>Filme da Semana</h2>
+
+            <p>
+                <span class="nome-destaque">Missão Extrema</span>
+                está com 20% de desconto durante esta semana.
+            </p>
+        </section>
+        <button
+        onclick="comprarComDesconto('Missão Extrema', 28.90)">
+        Comprar com desconto
+        </button>
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+
+            <p>Email: contato@cinemax.com</p>
+            <p>Telefone: (49) 99999-9999</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CineMax - Projeto Educacional</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

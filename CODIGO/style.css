@@ -1,0 +1,151 @@
+body {
+    background-color: #e4a3a3;
+    font-family: Arial, sans-serif;
+    color: #c92424;
+}
+
+header {
+    background-color: #5e120d;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 30px;
+}
+
+
+h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+nav {
+    background-color: #000000;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+
+nav a:hover {
+    color: rgb(63, 54, 179);
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: rgb(235, 222, 222);
+    border: 1px solid #e00000;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #fc3d03;
+    border-bottom: 2px solid #ff9987;
+    padding-bottom: 5px;
+}
+
+
+ul {
+    line-height: 1.8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #800808;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #df4444;
+    color: rgb(56, 27, 27);
+}
+
+tr:nth-child(even) {
+    background-color: #480cd6;
+}
+
+form {
+    background-color: #810c0c;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+input,
+textarea,
+select {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #922626;
+    border-radius: 5px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+textarea,
+select {
+width: 100%;
+box-sizing: border-box;
+}
+
+
+button {
+    background-color: #a03131;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+
+    button:hover {
+        background-color: #5c1616;
+        }
+
+        footer {
+            background-color: #3a0303;
+            color: rgb(255, 56, 56);
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            }
+            
+
+            p{
+                color: #e01d1d;
+                font-weight: bold;
+                padding-bottom: 5px;}
+
+                nav a {
+                    transition: color 0.3s;
+                }
+                
+                button {
+                    transition: background-color 0.3s;
+                }

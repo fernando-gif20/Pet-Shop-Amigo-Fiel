@@ -1,0 +1,140 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+/* CABEÇALHO */
+header {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+header h1 {
+    margin: 0;
+    color: #38bdf8;
+}
+/* MENU */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1e293b;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #38bdf8;
+}
+/* ÁREAS PRINCIPAIS */
+main,
+.area-estoque {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+input,
+select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+/* BOTÕES */
+button {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    padding: 12px;
+border-radius: 8px;
+cursor: pointer;
+}
+button:hover {
+background-color: #0369a1;
+}
+.secundario {
+background-color: #64748b;
+}
+.secundario:hover {
+background-color: #475569;
+}
+.excluir {
+background-color: #dc2626;
+}
+.excluir:hover {
+background-color: #b91c1c;
+}
+/* INDICADORES */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.indicador {
+    background-color: #e0f2fe;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.indicador p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0369a1;
+}
+/* TABELA */
+.tabela-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #cbd5e1;
+    text-align: left;
+}
+th {
+    background-color: #e2e8f0;
+}
+td button {
+    margin: 3px;
+}
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .indicadores {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}

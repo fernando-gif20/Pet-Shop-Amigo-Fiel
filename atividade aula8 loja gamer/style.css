@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(20, 20, 40, 0.95);
+    border: 2px solid #00ff9d;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #00ff9d;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #00ff9d;
+    font-weight: 600;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #3a3a5c;
+    border-radius: 8px;
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+select:focus,
+input[type="number"]:focus {
+    border-color: #00ff9d;
+}
+
+.botoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #00ff9d;
+    color: #0f0c29;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 157, 0.4);
+}
+
+button.limpar {
+    background: #ff4d6d;
+    color: #fff;
+}
+
+button.limpar:hover {
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+}
+
+.resultado {
+    margin-top: 28px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #1a1a2e;
+    border: 1px solid #3a3a5c;
+    text-align: center;
+    font-size: 1.15rem;
+    min-height: 60px;
+    display: none;
+}
+
+.resultado.ativo {
+    display: block;
+}
+
+.resultado .preco {
+    color: #00ff9d;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.resultado .erro {
+    color: #ff4d6d;
+}

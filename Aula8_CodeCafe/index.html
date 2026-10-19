@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Café</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+
+    <header>
+        <h1> Code Café </h1>
+        <p>
+            Monte seu pedido e descubra o valor final.
+        </p>
+    </header>
+
+
+
+
+
+
+    <main>
+        <section class="pedido">
+            <h2>Faça seu pedido</h2>
+            <form>
+                <label for="nome">Nome do cliente:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+                <br><br><br>
+                <label for="produto">Produto:</label>
+                <select id="produto">
+                    <option value="">
+                        Selecione
+                    </option>
+                    <option value="cafe">
+                        Café
+                    </option>
+                    <option value="cappuccino">
+                        Cappuccino
+                    </option>
+                    <option value="chocolate">
+                        Chocolate Quente
+                    </option>
+                    <option value="cha">
+                        Chá
+                    </option>
+                </select>
+                <br><br><br>
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" min="1" placeholder="Digite a quantidade">
+
+                <br><br><br>
+                <label for="cupom">Cupom de desconto:</label>
+                <input type="text" id="cupom" placeholder="Digite o cupom, se possuir">
+                <br><br><br>
+
+                <div class="botoes">
+                    <button type="button" onclick="calcularPedido()">
+                        Calcular pedido
+                    </button>
+                    <button type="button" onclick="limparPedido()">
+                        Limpar
+                    </button>
+                </div>
+                <div id="resultado">
+                    <h2>Resumo do Pedido</h2>
+                    <p>
+                        <strong>Cliente:</strong>
+                        <span id="resultadoNome"></span>
+                    </p>
+                    <p>
+                        <strong>Produto:</strong>
+                        <span id="resultadoProduto"></span>
+                    </p>
+                    <p>
+                        <strong>Quantidade:</strong>
+                        <span id="resultadoQuantidade"></span>
+                    </p>
+                    <p>
+                        <strong>Valor unitário:</strong>
+                        R$ <span id="resultadoPreco"></span>
+                    </p>
+                    <p>
+                        <strong>Subtotal:</strong>
+                        R$ <span id="resultadoSubtotal"></span>
+                    </p>
+                    <p>
+                        <strong>Desconto:</strong>
+                        R$ <span id="resultadoDesconto"></span>
+                    </p>
+                    <p class="total">
+                        <strong>Total:</strong>
+                        R$ <span id="resultadoTotal"></span>
+                    </p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </form>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

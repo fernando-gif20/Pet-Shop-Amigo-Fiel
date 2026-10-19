@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- CONFIGURAÇÕES -->
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+    <title>StockTech - Controle de Estoque</title>
+    <!-- CONECTA AO CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>📦 StockTech</h1>
+        <p>Sistema de Controle de Estoque</p>
+    </header>
+    <!-- MENU -->
+    <nav>
+        <a href="#cadastro">Cadastrar</a>
+        <a href="#estoque">Consultar Estoque</a>
+    </nav>
+    <!-- CONTEÚDO PRINCIPAL -->
+<main>
+    <!-- ÁREA DE CADASTRO -->
+    <section id="cadastro">
+        <h2>➕ Cadastro de Produtos</h2>
+        <!-- FORMULÁRIO COMPLETO -->
+        <form id="formProduto"
+              onsubmit="salvarProduto(event)">
+            <label for="nome">Nome do produto:</label>
+            <input type="text"
+                   id="nome"
+                   placeholder="Ex.: Mouse Gamer"
+                   required>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" required>
+                <option value="">Selecione</option>
+                <option>Periféricos</option>
+                <option>Computadores</option>
+                <option>Celulares</option>
+                <option>Acessórios</option>
+                <option>Outros</option>
+            </select>
+            <label for="preco">Preço (R$):</label>
+            <input type="number"
+                   id="preco"
+                   min="0.01"
+                   step="0.01"
+                   required>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number"
+                   id="quantidade"
+                   min="0"
+                   step="1"
+                   required>
+            <!-- BOTÃO DE CADASTRO OU EDIÇÃO -->
+            <button type="submit" id="botaoSalvar">
+                💾 Salvar Produto
+            </button>
+            <button type="button"
+                    class="secundario"
+                    onclick="limparFormulario()">
+                Limpar
+            </button>
+        </form>
+    </section>
+</main>
+<!-- ÁREA DE CONSULTA -->
+<section id="estoque" class="area-estoque">
+    <h2>📋 Produtos Cadastrados</h2>
+    <!-- INDICADORES -->
+    <div class="indicadores">
+        <div class="indicador">
+            <h3>Produtos</h3>
+            <p id="totalProdutos">0</p>
+        </div>
+        <div class="indicador">
+            <h3>Unidades</h3>
+            <p id="totalUnidades">0</p>
+        </div>
+        <div class="indicador">
+            <h3>Valor do Estoque</h3>
+            <p id="valorEstoque">R$ 0,00</p>
+        </div>
+    </div>
+    <!-- TABELA DE PRODUTOS -->
+    <div class="tabela-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Qtd.</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaProdutos">
+                <!-- JAVASCRIPT INSERE OS PRODUTOS -->
+            </tbody>
+</table>
+</div>
+</section>
+<!-- RODAPÉ -->
+<footer>
+<p>StockTech — Projeto Educacional</p>
+</footer>
+<!-- CONECTA AO JAVASCRIPT -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #070711;
+    color: white;
+}
+
+
+/* HEADER */
+
+header {
+    background: #101020;
+    border-bottom: 2px solid #713cff;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo:first-letter {
+    font-size: 35px;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #9368ff;
+}
+
+.logo p {
+    margin: 0;
+    color: #aaa;
+}
+
+
+/* MENU */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #9368ff;
+}
+
+
+/* PRINCIPAL */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    background: #111122;
+    border: 1px solid #29294b;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+
+/* INÍCIO */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(
+        135deg,
+        #18133a,
+        #101020
+    );
+}
+
+.tag {
+    background: #713cff;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.hero h2 {
+    font-size: 50px;
+}
+
+.hero h2 span {
+    color: #9368ff;
+}
+
+.hero p {
+    color: #bbb;
+    font-size: 18px;
+}
+
+
+/* BOTÕES */
+
+.botao,
+button {
+    display: inline-block;
+    background: #713cff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 22px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.botao:hover,
+button:hover {
+    background: #9368ff;
+}
+
+
+/* TÍTULOS */
+
+.titulo span {
+    color: #9368ff;
+    font-weight: bold;
+}
+
+.titulo h2 {
+    color: #9368ff;
+}
+
+
+/* JOGOS */
+
+.lista-jogos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #19192d;
+    border: 1px solid #303054;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #9368ff;
+}
+
+
+/* CAPAS */
+
+.capa {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+}
+
+.capa strong {
+    font-size: 40px;
+}
+
+
+/* CORES DOS JOGOS */
+
+.gta {
+    background-image: url(
+        "https://images.hdqwalls.com/download/gta-6-sunset-4k-ox-1440x900.jpg"
+    );
+
+    background-size: cover;
+    background-position: center;
+}
+
+.mw4 {
+    background: linear-gradient(
+        135deg,
+        #111,
+        #555,
+        #222
+    );
+}
+
+.forza {
+    background: linear-gradient(
+        135deg,
+        #071c44,
+        #1165a0,
+        #e25b18
+    );
+}
+
+.elden {
+    background: linear-gradient(
+        135deg,
+        #233f54,
+        #071017
+    );
+}
+
+
+/* CONTEÚDO DO CARD */
+
+.conteudo {
+    padding: 15px;
+}
+
+.conteudo span {
+    background: #713cff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.conteudo p {
+    color: #aaa;
+}
+
+
+/* FORMULÁRIOS */
+
+form {
+    background: #19192d;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #090914;
+    color: white;
+    border: 1px solid #3c3c64;
+    border-radius: 7px;
+}
+
+
+/* RESULTADO */
+
+.resultado {
+    background: #19192d;
+    border: 1px solid #713cff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* BOTÃO LIMPAR */
+
+.limpar {
+    background: #44445a;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background: #101020;
+    border-top: 2px solid #713cff;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h3 {
+    color: #9368ff;
+}
+
+footer p {
+    color: #999;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+
+    .lista-jogos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .lista-jogos {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.capa {
+    overflow: hidden;
+    height: 200px; /* ou o tamanho que você quiser */
+}
+
+.capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

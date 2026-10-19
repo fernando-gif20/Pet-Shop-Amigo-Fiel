@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPlay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>TechPlay</h1>
+        <p>Seu catálogo de jogos e aventuras digitais</p>
+    </header>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#destaque">Destaque</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <main>
+        <section id="inicio" class="apresentacao">
+            <h2>Bem-vindo à TechPlay</h2>
+            <p>Encontre jogos para diferentes estilos, plataformas e aventuras.</p>
+        </section>
+        <section id="jogos">
+            <h2>Jogos disponíveis</h2>
+            <div class="lista-cards">
+                <div class="card">
+                    <img src="https://www.bing.com/th/id/OIP.gBNC3shZkV_Ii3I25AAyDQHaDg?w=193&h=135&c=8&rs=1&qlt=90&o=6&pid=ImgAns&rm=2"
+                        alt="Aventura Espacial">
+                    <h3>Aventura Espacial</h3>
+                    <span class="categoria">Aventura</span>
+                    <p>Explore planetas, enfrente desafios e descubra novos mundos.</p>
+                    <p class="preco">R$ 49,90</p>
+                    <button onclick="comprar('Aventura Espacial', 49.90)">
+                        Comprar
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.djENxcFNP3ck3kiGX4HJrgHaEc?w=283&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="Corrida Urbana">
+                    <h3>Corrida Urbana</h3>
+                    <span class="categoria">Corrida</span>
+                    <p>Participe de corridas emocionantes pelas ruas de uma grande cidade.</p>
+                    <p class="preco">R$ 39,90</p>
+                    <button onclick="comprar('Corrida Urbana', 39.90)">
+                        Comprar
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.532h95MTVj0GndsTVyPDYgHaDZ?w=310&h=160&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="Mistério da Floresta">
+                    <h3>Mistério da Floresta</h3>
+                    <span class="categoria">Mistério</span>
+                    <p>Investigue pistas e descubra os segredos escondidos na floresta.</p>
+                    <p class="preco">R$ 44,90</p>
+                    <button onclick="comprar('Mistério da Floresta', 44.90)">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="destaque" class="destaque">
+            <h2>Jogo da semana</h2>
+            <p>
+                <span class="nome-destaque">Aventura Espacial</span>
+                está com desconto especial até domingo.
+            </p>
+        </section>
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <p>E-mail: contato@techplay.com</p>
+            <p>Telefone: (49) 99999-9999</p>
+        </section>
+    </main>
+    <footer>
+        <p>TechPlay - Projeto educacional</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

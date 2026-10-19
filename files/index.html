@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fábrica de Desculpas Perfeitas | Desculpas geradas por IA</title>
+<meta name="description" content="Uma Inteligência Artificial capaz de criar desculpas personalizadas para qualquer situação em segundos.">
+
+<!-- Fontes e Ícones -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="header" id="header">
+  <nav class="navbar container">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+      <span class="logo-text">Fábrica de <strong>Desculpas Perfeitas</strong></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" class="nav-link">Início</a></li>
+      <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+      <li><a href="#biblioteca" class="nav-link">Biblioteca</a></li>
+      <li><a href="#faq" class="nav-link">FAQ</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+    </ul>
+
+    <a href="#gerador" class="btn btn-primary nav-cta">Criar Desculpa</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-text" data-animate="fade-up">
+        <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> IA especializada em imprevistos</span>
+        <h1>Nunca mais invente desculpas na <span class="text-gradient">pressão.</span></h1>
+        <p class="hero-subtitle">Uma Inteligência Artificial capaz de criar desculpas personalizadas para qualquer situação em segundos.</p>
+        <div class="hero-actions">
+          <a href="#gerador" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-bolt"></i> Criar Minha Desculpa
+          </a>
+          <a href="#biblioteca" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-book-open"></i> Ver Exemplos
+          </a>
+        </div>
+        <div class="hero-trust">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Usado por mais de 250 mil pessoas "atrasadas" no mundo todo</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-animate="fade-left">
+        <div class="terminal-card glass">
+          <div class="terminal-header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title"><i class="fa-solid fa-microchip"></i> excuse-engine.ai</span>
+          </div>
+          <div class="terminal-body">
+            <p class="terminal-line"><span class="prompt">&gt;</span> analisando situação<span class="dots-loading">...</span></p>
+            <p class="terminal-line typed" id="heroTyped"></p>
+            <div class="terminal-meter">
+              <span>Nível de credibilidade</span>
+              <div class="meter-track"><div class="meter-fill" id="heroMeter"></div></div>
+              <span id="heroMeterValue">0%</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-chip chip-1"><i class="fa-solid fa-cloud-rain"></i> Chuva forte</div>
+        <div class="floating-chip chip-2"><i class="fa-solid fa-car"></i> Trânsito</div>
+        <div class="floating-chip chip-3"><i class="fa-solid fa-wifi"></i> Internet caiu</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROLETA DE DESCULPAS ============ -->
+  <section class="roulette-section" id="roleta">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Modo rápido</span>
+        <h2>Gire a roleta e receba sua desculpa</h2>
+        <p>Sem paciência para preencher formulário? Deixe a sorte (e a IA) decidirem por você.</p>
+      </div>
+
+      <div class="roulette-wrapper" data-animate="fade-up">
+        <div class="roulette-pointer"><i class="fa-solid fa-caret-down"></i></div>
+        <div class="roulette" id="roulette">
+          <svg viewBox="0 0 400 400" id="rouletteSvg" class="roulette-svg"></svg>
+          <button class="roulette-center" id="spinBtn">
+            <span>GERAR<br>DESCULPA</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="roulette-result glass" id="rouletteResult" hidden>
+        <span class="roulette-result-tag" id="rouletteCategory">Categoria</span>
+        <p id="rouletteExcuse">Sua desculpa aparecerá aqui.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GERADOR ============ -->
+  <section class="generator-section" id="gerador">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Personalize</span>
+        <h2>Gerador completo de desculpas</h2>
+        <p>Conte a situação, escolha o tom e a urgência. A IA cuida do resto.</p>
+      </div>
+
+      <div class="generator-grid" data-animate="fade-up">
+        <form class="generator-form glass" id="generatorForm">
+          <div class="form-group">
+            <label for="compromisso"><i class="fa-solid fa-calendar-day"></i> Tipo de compromisso</label>
+            <select id="compromisso" required>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Faculdade">Faculdade</option>
+              <option value="Escola">Escola</option>
+              <option value="Família">Família</option>
+              <option value="Amigos">Amigos</option>
+              <option value="Namoro">Namoro</option>
+              <option value="Médico">Médico</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pessoa"><i class="fa-solid fa-user"></i> Pessoa</label>
+            <select id="pessoa" required>
+              <option value="Chefe">Chefe</option>
+              <option value="Professor">Professor</option>
+              <option value="Cliente">Cliente</option>
+              <option value="Amigo">Amigo</option>
+              <option value="Namorado(a)">Namorado(a)</option>
+              <option value="Pais">Pais</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tom"><i class="fa-solid fa-masks-theater"></i> Tom</label>
+            <select id="tom" required>
+              <option value="Formal">Formal</option>
+              <option value="Casual">Casual</option>
+              <option value="Engraçado">Engraçado</option>
+              <option value="Dramático">Dramático</option>
+              <option value="Educado">Educado</option>
+            </select>
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="urgencia">
+              <i class="fa-solid fa-gauge-high"></i> Urgência
+              <span class="range-value" id="urgenciaValue">5</span>
+            </label>
+            <input type="range" id="urgencia" min="1" max="10" value="5">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Gerar Desculpa
+          </button>
+        </form>
+
+        <div class="generator-result">
+          <div class="result-card glass" id="resultCard">
+            <div class="result-empty" id="resultEmpty">
+              <i class="fa-solid fa-comment-dots"></i>
+              <p>Preencha o formulário ao lado para ver sua desculpa personalizada aqui.</p>
+            </div>
+            <div class="result-content" id="resultContent" hidden>
+              <span class="result-tag" id="resultTag">Trabalho · Chefe</span>
+              <p class="result-text" id="resultText"></p>
+              <div class="result-actions">
+                <button class="btn btn-ghost" id="copyBtn"><i class="fa-regular fa-copy"></i> Copiar</button>
+                <button class="btn btn-ghost" id="regenerateBtn"><i class="fa-solid fa-rotate"></i> Gerar Outra</button>
+                <button class="btn btn-ghost" id="shareBtn"><i class="fa-solid fa-share-nodes"></i> Compartilhar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BIBLIOTECA ============ -->
+  <section class="library-section" id="biblioteca">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Acervo</span>
+        <h2>Biblioteca de desculpas</h2>
+        <p>Explore por categoria e use uma desculpa pronta em segundos.</p>
+      </div>
+
+      <div class="library-grid" id="libraryGrid" data-animate="fade-up">
+        <!-- Cartões gerados via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESTATÍSTICAS ============ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid" data-animate="fade-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="250000">0</span>
+          <span class="stat-label">Desculpas geradas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="98" data-suffix="%">0</span>
+          <span class="stat-label">Taxa de convencimento*</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="42">0</span>
+          <span class="stat-label">Países utilizando</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="1200000">0</span>
+          <span class="stat-label">Compromissos salvos</span>
+        </div>
+      </div>
+      <p class="stats-note">*Resultados podem variar dependendo do chefe.</p>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
+  <section class="how-section" id="como-funciona">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Processo</span>
+        <h2>Como funciona</h2>
+        <p>Quatro passos entre você e uma desculpa impecável.</p>
+      </div>
+
+      <div class="how-grid" data-animate="fade-up">
+        <div class="how-card">
+          <span class="how-step">01</span>
+          <i class="fa-solid fa-comment-dots how-icon"></i>
+          <h3>Conte a situação</h3>
+          <p>Descreva rapidamente o compromisso e com quem você precisa falar.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-step">02</span>
+          <i class="fa-solid fa-brain how-icon"></i>
+          <h3>A IA entende o contexto</h3>
+          <p>Nosso modelo analisa tom, urgência e o tipo de relação envolvida.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-step">03</span>
+          <i class="fa-solid fa-wand-magic-sparkles how-icon"></i>
+          <h3>A desculpa é criada</h3>
+          <p>Em segundos, uma desculpa única e crível é gerada especialmente para você.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-step">04</span>
+          <i class="fa-solid fa-paper-plane how-icon"></i>
+          <h3>Copie e envie</h3>
+          <p>Copie com um clique e envie por onde for mais conveniente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Depoimentos</span>
+        <h2>Quem usou, aprovou</h2>
+      </div>
+
+      <div class="testimonials-grid" data-animate="fade-up">
+        <div class="testimonial-card glass">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Meu chefe acreditou imediatamente. Recomendo para todo mundo que vive no sufoco."</p>
+          <div class="testimonial-author">
+            <div class="avatar">RM</div>
+            <div>
+              <strong>Rafael M.</strong>
+              <span>Analista de Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Salvou meu aniversário. Literalmente. Nunca mais esqueço uma data sem ter um plano B."</p>
+          <div class="testimonial-author">
+            <div class="avatar">CS</div>
+            <div>
+              <strong>Camila S.</strong>
+              <span>Designer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"Agora nunca fico sem resposta. A ferramenta virou parte da minha rotina de trabalho."</p>
+          <div class="testimonial-author">
+            <div class="avatar">JP</div>
+            <div>
+              <strong>João P.</strong>
+              <span>Desenvolvedor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-heading" data-animate="fade-up">
+        <span class="eyebrow center">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list" id="faqList" data-animate="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            As desculpas são realmente originais?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. Cada desculpa é montada combinando situação, pessoa, tom e urgência escolhidos por você, gerando resultados únicos a cada geração.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Existe garantia de que vão acreditar em mim?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Trabalhamos para gerar desculpas cada vez mais convincentes, mas não controlamos o nível de confiança do seu chefe, professor ou parceiro(a).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Posso usar a mesma desculpa mais de uma vez?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Tecnicamente sim, mas recomendamos variar — repetir a mesma desculpa costuma reduzir bastante a credibilidade.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            O serviço é gratuito?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O gerador básico e a roleta são gratuitos. Estamos preparando planos avançados com desculpas ainda mais elaboradas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Vocês se responsabilizam pelas consequências?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Não. Este é um serviço de entretenimento. Use com bom senso e responsabilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="cta-section" id="contato">
+    <div class="container">
+      <div class="cta-card glass" data-animate="fade-up">
+        <h2>Pronto para nunca mais travar na hora H?</h2>
+        <p>Crie sua primeira desculpa agora mesmo, sem custo e sem complicação.</p>
+        <a href="#gerador" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-bolt"></i> Criar Minha Desculpa
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#inicio" class="logo">
+        <span class="logo-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+        <span class="logo-text">Fábrica de <strong>Desculpas Perfeitas</strong></span>
+      </a>
+      <p>Inteligência Artificial a serviço dos seus atrasos, cancelamentos e imprevistos.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Links rápidos</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#como-funciona">Como Funciona</a></li>
+        <li><a href="#biblioteca">Biblioteca</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Redes sociais</h4>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Fábrica de Desculpas Perfeitas. Todos os direitos reservados.</p>
+    <p class="footer-disclaimer">Use com responsabilidade. Não garantimos que sua mãe ou seu chefe acreditem sempre.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f1f1f1;
+    color:#333;
+}
+
+header{
+    background:#1b1464;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+nav{
+    background:#0f1150;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffd32a;
+}
+
+main{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.apresentacao,
+.destaque,
+.contato{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:30px;
+}
+
+.lista-cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    width:300px;
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card h3{
+    margin:15px 0 10px;
+}
+
+.categoria{
+    display:inline-block;
+    background:#ffd32a;
+    color:black;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.preco{
+    color:#e74c3c;
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#3c40c6;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#1b1464;
+}
+
+.destaque{
+    border-left:8px solid #ffd32a;
+}
+
+.nome-destaque{
+    color:#e74c3c;
+    font-weight:bold;
+}
+
+footer{
+    background:#1b1464;
+    color:white;
+    text-align:center;
+    padding:20px;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+ 
+<html lang="pt-BR"> 
+ 
+<head> 
+ 
+    <!-- CONFIGURAÇÕES DA PÁGINA --> 
+    <meta charset="UTF-8"> 
+ 
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"> 
+ 
+    <title>Cadastro - CinePlay</title> 
+ 
+    <!-- CONECTA AO CSS --> 
+    <link rel="stylesheet" href="style.css"> 
+ 
+</head> 
+ 
+<body> 
+ 
+    <!-- CABEÇALHO E MENU --> 
+    <header> 
+ 
+        <h1>            CinePlay</h1> 
+ 
+        <p>Cadastro de filmes</p> 
+ 
+        <nav> 
+ 
+            <a href="index.html">Início</a> 
+            <a href="catalogo.html">Catálogo</a> 
+            <a href="cadastro.html">Cadastrar</a> 
+            <a href="sobre.html">Sobre</a> 
+ 
+        </nav> 
+ 
+    </header> 
+ 
+ 
+    <!-- ÁREA PRINCIPAL --> 
+    <main> 
+ 
+        <section> 
+ 
+            <h2 id="tituloFormulario"> 
+                  Cadastrar novo filme 
+            </h2> 
+ 
+ 
+            <!-- FORMULÁRIO DE CADASTRO --> 
+            <div class="formulario"> 
+ 
+                <!-- DADOS DO FILME --> 
+                <label for="titulo">Título:</label> 
+ 
+                <input 
+                    type="text" 
+                    id="titulo" 
+                    placeholder="Ex.: Interestelar"> 
+ 
+ 
+                <label for="genero">Gênero:</label> 
+ 
+                <select id="genero"> 
+ 
+                    <option value="">Selecione</option> 
+                    <option value="Ação">Ação</option> 
+                    <option value="Aventura">Aventura</option> 
+                    <option value="Comédia">Comédia</option> 
+                    <option value="Drama">Drama</option> 
+                    <option value="Fantasia">Fantasia</option> 
+                    <option value="Ficção Científica"> 
+                        Ficção Científica 
+                    </option> 
+                    <option value="Terror">Terror</option> 
+                    <option value="Animação">Animação</option> 
+                    <option value="Outro">Outro</option> 
+ 
+                </select> 
+ 
+ 
+                <label for="nota">Nota:</label> 
+ 
+                <input 
+                    type="number" 
+                    id="nota" 
+                    min="0" 
+                    max="10" 
+                    step="0.1" 
+                    placeholder="Ex.: 8.7"> 
+ 
+ 
+                <!-- ESCOLHA DO PÔSTER --> 
+                <label for="imagem"> 
+                    Pôster do filme: 
+                </label> 
+ 
+                <input 
+                    type="file" 
+                    id="imagem" 
+                    accept="image/*" 
+                    onchange="mostrarPreview()"> 
+ 
+ 
+                <!-- PRÉVIA DO PÔSTER --> 
+                <img 
+                    id="previewImagem" 
+                    class="preview-imagem" 
+                    alt="Prévia do pôster"> 
+ 
+ 
+                <!-- LINK EXTERNO --> 
+                <label for="link"> 
+                    Link para saber mais: 
+                </label> 
+ 
+                <input 
+                    type="text" 
+                    id="link" 
+                    placeholder="https://..."> 
+ 
+ 
+                <!-- BOTÃO --> 
+                <button 
+                    type="button" 
+                    id="botaoSalvar" 
+                    onclick="salvarFilme()"> 
+ 
+                                Cadastrar filme 
+ 
+                </button> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+    </main> 
+ 
+ 
+    <!-- RODAPÉ --> 
+    <footer> 
+ 
+<p>            
+CinePlay - Projeto educacional</p> 
+</footer> 
+<!-- CONECTA AO JAVASCRIPT --> 
+<script src="script.js"></script> 
+</body> 
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Gamer - PixelPlay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎮 PixelPlay - Loja Gamer</h1>
+        <p class="subtitulo">Calcule o valor da sua compra</p>
+
+        <form id="formLoja">
+            <div class="campo">
+                <label for="produto">Escolha o produto:</label>
+                <select id="produto">
+                    <option value="">-- Selecione --</option>
+
+
+
+
+
+
+                    <option value="console">Console (R$ 2.499,00)</option>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <option value="jogo">Jogo Digital (R$ 249,90)</option>
+                    <option value="headset">Headset Gamer (R$ 399,00)</option>
+                    <option value="teclado">Teclado Mecânico (R$ 549,00)</option>
+                    <option value="mouse">Mouse Gamer (R$ 189,90)</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" min="1" value="1">
+            </div>
+
+            <div class="campo">
+                <label for="desconto">Cupom de desconto:</label>
+                <select id="desconto">
+                    <option value="0">Sem desconto</option>
+                    <option value="5">GAMER5 (5%)</option>
+                    <option value="10">PIXEL10 (10%)</option>
+                    <option value="15">PRO15 (15%)</option>
+                </select>
+            </div>
+
+            <div class="botoes">
+                <button type="button" onclick="calcular()">Calcular Total</button>
+                <button type="button" class="limpar" onclick="limpar()">Limpar</button>
+            </div>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

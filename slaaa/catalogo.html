@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+<!-- CONFIGURAÇÕES DA PÁGINA --> 
+<meta charset="UTF-8"> 
+<meta 
+name="viewport" 
+content="width=device-width, initial-scale=1.0"> 
+<title>Catálogo - CinePlay</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body onload="mostrarFilmes()"> 
+<!-- CABEÇALHO E MENU --> 
+<header> 
+<h1>            
+CinePlay</h1> 
+<p>Catálogo de filmes</p> 
+<nav> 
+            <a href="index.html">Início</a> 
+            <a href="catalogo.html">Catálogo</a> 
+            <a href="cadastro.html">Cadastrar</a> 
+            <a href="sobre.html">Sobre</a> 
+ 
+        </nav> 
+ 
+    </header> 
+ 
+ 
+    <!-- CONTEÚDO DO CATÁLOGO --> 
+    <main> 
+ 
+        <section> 
+ 
+            <!-- CABEÇALHO DO CATÁLOGO --> 
+            <div class="cabecalho-catalogo"> 
+ 
+                <div> 
+ 
+                    <h2>      Meus Filmes</h2> 
+ 
+                    <p> 
+                        Filmes cadastrados: 
+                        <strong id="totalFilmes">0</strong> 
+                    </p> 
+ 
+                </div> 
+ 
+                <a 
+                    class="botao-link" 
+                    href="cadastro.html"> 
+ 
+                      Novo filme 
+ 
+                </a> 
+ 
+            </div> 
+ 
+ 
+            <!-- ÁREA DE PESQUISA --> 
+            <div class="pesquisa"> 
+ 
+                <input 
+                    type="text" 
+                    id="campoPesquisa" 
+                    placeholder="Digite o título do filme"> 
+ 
+                <button 
+                    type="button" 
+                    onclick="pesquisarFilme()"> 
+ 
+                        Pesquisar 
+ 
+                </button> 
+ 
+                <button 
+                    type="button" 
+                    onclick="mostrarFilmes()"> 
+ 
+                    Mostrar todos 
+ 
+                </button> 
+ 
+            </div> 
+ 
+ 
+            <!-- MENSAGEM DA PESQUISA --> 
+            <p id="mensagemPesquisa"></p> 
+ 
+ 
+            <!-- O JAVASCRIPT CRIARÁ OS CARDS AQUI --> 
+            <div 
+                id="listaFilmes" 
+                class="catalogo"> 
+            </div> 
+ 
+        </section> 
+ 
+    </main> 
+ 
+ 
+    <!-- RODAPÉ --> 
+    <footer> 
+ 
+        <p>            CinePlay - Projeto educacional</p> 
+ 
+    </footer> 
+ 
+ 
+    <!-- CONECTA AO JAVASCRIPT --> 
+    <script src="script.js"></script> 
+ 
+</body> 
+ 
+</html>

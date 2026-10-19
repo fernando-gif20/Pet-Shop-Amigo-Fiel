@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Participantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <header>
+        <h1>Cadastro de Participantes</h1>
+        <p>Preencha seus dados para realizar a inscrição.</p>
+    </header>
+    <main>
+        <section class="cadastro">
+            <h2>Dados do participante</h2>
+            <div id="aviso" onmouseover="entrarAviso()" onmouseout="sairAviso()">
+                Passe o mouse aqui para uma orientação.
+            </div>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" onkeyup="mostrarNome()">
+                <p>
+                    Nome digitado:
+                    <strong id="nomeDigitado"></strong>
+                </p>
+                <br><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail">
+                <br>
+                <br>
+                <label for="data">Data de nascimento:</label>
+                <input type="date" id="data">
+                <br>
+                <br>
+                <label for="curso">Curso:</label>
+                <select id="curso" onchange="mostrarCurso()">
+                    <option value="">
+                        Selecione o curso
+                    </option>
+                    <option value="Desenvolvimento Web">
+                        Desenvolvimento Web
+                    </option>
+                    <option value="Programação">
+                        Programação
+                    </option>
+                    <option value="Banco de Dados">
+                        Banco de Dados
+                    </option>
+                    <p>
+                        Curso selecionado:
+                        <strong id="cursoSelecionado">
+                            Nenhum
+                        </strong>
+                    </p>
+                </select>
+                <br>
+                <br>
+                <label for="turno">Turno:</label>
+
+                <select id="turno">
+
+                    <option value="">
+
+                        Selecione
+                    </option>
+                    <option value="Manhã">
+                        Manhã
+                    </option>
+                    <option value="Tarde">
+                        Tarde
+                    </option>
+                    <option value="Noite">
+                        Noite
+                    </option>
+                </select>
+                <br>
+                <br>
+                <div class="botoes">
+                    <button type="button" onclick="cadastrar()">
+                        Cadastrar
+                    </button>
+                    <button type="button" onclick="limpar()">
+                        Limpar
+                    </button>
+                </div>
+
+
+
+
+
+            </form>
+            <div id="resultado">
+                <h2 id="tituloResultado">
+                    Dados cadastrados
+                </h2>
+                <p>
+                    <strong>Nome:</strong>
+                    <span id="resultadoNome"></span>
+                </p>
+                <p>
+                    <strong>E-mail:</strong>
+                    <span id="resultadoEmail"></span>
+                </p>
+                <p>
+                    <strong>Data:</strong>
+                    <span id="resultadoData"></span>
+                </p>
+                <p>
+                    <strong>Curso:</strong>
+                    <span id="resultadoCurso"></span>
+                </p>
+                <p>
+                    <strong>Turno:</strong>
+                    <span id="resultadoTurno"></span>
+                </p>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

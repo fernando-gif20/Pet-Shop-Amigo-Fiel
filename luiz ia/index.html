@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fábrica de Desculpas Perfeitas™</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eef5ff,#dbeafe,#edf6ff);
+overflow-x:hidden;
+color:#1e293b;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:#60a5fa22;
+filter:blur(100px);
+top:-200px;
+left:-150px;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#3b82f622;
+filter:blur(100px);
+right:-100px;
+bottom:-150px;
+z-index:-1;
+}
+
+.container{
+
+width:90%;
+max-width:1300px;
+margin:auto;
+padding:60px 0;
+
+display:grid;
+grid-template-columns:1fr 520px;
+gap:70px;
+align-items:center;
+
+}
+
+.badge{
+
+display:inline-block;
+background:#dbeafe;
+color:#2563eb;
+padding:10px 18px;
+border-radius:40px;
+font-size:14px;
+font-weight:700;
+margin-bottom:25px;
+
+}
+
+h1{
+
+font-size:65px;
+line-height:1.05;
+font-weight:900;
+margin-bottom:25px;
+
+}
+
+h1 span{
+
+color:#2563eb;
+
+}
+
+.sub{
+
+font-size:20px;
+line-height:1.8;
+color:#64748b;
+margin-bottom:35px;
+
+}
+
+button{
+
+background:#2563eb;
+color:white;
+border:none;
+padding:18px 40px;
+font-size:18px;
+border-radius:15px;
+cursor:pointer;
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-4px);
+background:#1d4ed8;
+
+}
+
+.card{
+
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.10);
+
+}
+
+.card h2{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.roleta-area{
+
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:25px 0 35px;
+
+}
+
+.ponteiro{
+
+position:absolute;
+top:-18px;
+
+width:0;
+height:0;
+
+border-left:18px solid transparent;
+border-right:18px solid transparent;
+border-top:35px solid #ef4444;
+
+z-index:10;
+
+}
+
+.roleta{
+
+width:330px;
+height:330px;
+border-radius:50%;
+
+background:
+conic-gradient(
+
+#2563eb 0deg 60deg,
+#3b82f6 60deg 120deg,
+#60a5fa 120deg 180deg,
+#93c5fd 180deg 240deg,
+#60a5fa 240deg 300deg,
+#2563eb 300deg 360deg
+
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+transition:4s cubic-bezier(.17,.67,.21,1);
+
+position:relative;
+
+}
+
+.roleta::before{
+
+content:"🎡";
+position:absolute;
+font-size:65px;
+
+}
+
+.label{
+
+position:absolute;
+font-size:13px;
+font-weight:bold;
+color:white;
+text-shadow:0 2px 5px rgba(0,0,0,.3);
+
+}
+
+.l1{top:30px;}
+.l2{right:20px;top:90px;}
+.l3{right:30px;bottom:70px;}
+.l4{bottom:20px;}
+.l5{left:20px;bottom:80px;}
+.l6{left:20px;top:90px;}
+
+.status{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:25px;
+
+}
+
+.box{
+
+background:#f8fafc;
+padding:18px;
+border-radius:15px;
+text-align:center;
+
+}
+
+.box h3{
+
+font-size:14px;
+color:#64748b;
+margin-bottom:10px;
+
+}
+
+.valor{
+
+font-size:24px;
+font-weight:900;
+color:#2563eb;
+
+}
+
+.resultado{
+
+margin-top:25px;
+background:#f8fafc;
+border-left:5px solid #2563eb;
+padding:20px;
+border-radius:15px;
+font-size:18px;
+line-height:1.7;
+min-height:120px;
+
+}
+
+.selo{
+
+margin-top:25px;
+background:#2563eb;
+color:white;
+padding:15px;
+border-radius:15px;
+text-align:center;
+font-weight:bold;
+
+}
+
+footer{
+
+margin-top:70px;
+text-align:center;
+color:#94a3b8;
+
+}
+
+@media(max-width:980px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+h1{
+
+font-size:45px;
+
+}
+
+.roleta{
+
+width:280px;
+height:280px;
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div>
+
+<div class="badge">
+🤖 IA Corporativa • Versão 5.0
+</div>
+
+<h1>
+Fábrica de <span>Desculpas Perfeitas™</span>
+</h1>
+
+<p class="sub">
+
+A startup mais séria do mercado... especializada em criar desculpas totalmente
+convincentes para atrasos, cancelamentos, reuniões, dates e qualquer evento
+canônico da sua vida.
+
+Clique em <b>Girar a Roleta</b> e descubra qual categoria do caos
+o universo escolheu para você.
+
+</p>
+
+<button onclick="girar()">
+🎡 GIRAR A ROLETA
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🎯 Gerador Oficial de Desculpas</h2>
+
+<div class="roleta-area">
+
+<div class="ponteiro"></div>
+
+<div class="roleta" id="roleta">
+
+<div class="label l1">💼 Trabalho</div>
+<div class="label l2">❤️ Crush</div>
+<div class="label l3">🎮 Amigos</div>
+<div class="label l4">🚗 Trânsito</div>
+<div class="label l5">📚 Faculdade</div>
+<div class="label l6">💀 Desespero</div>
+
+</div>
+
+</div>
+
+<div class="status">
+
+<div class="box">
+<h3>Nível de Convencimento</h3>
+<div class="valor" id="conv">--%</div>
+</div>
+
+<div class="box">
+<h3>Chance de Descobrirem</h3>
+<div class="valor" id="risco">--%</div>
+</div>
+
+</div>
+
+<div class="resultado" id="texto">
+
+Clique em <b>GIRAR</b> para gerar uma desculpa profissional.
+
+</div>
+
+<div class="selo">
+
+✅ Aprovado pelo Conselho Internacional das Desculpas™
+<br><br>
+"Mentimos... digo... inovamos desde 2026."
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+Powered by IA • 100% Meme • 0% Vergonha • Build 6.9
+
+</footer>
+
+<script>
+
+const categorias={
+
+"💼 Trabalho":[
+
+"Deu ruim aqui. Meu PC resolveu entrar em modo aposentadoria.",
+
+"O Wi-Fi acordou e escolheu a violência hoje.",
+
+"Meu notebook decidiu atualizar por livre e espontânea raiva.",
+
+"Juro que saí no horário, mas o trânsito tava em evento canônico.",
+
+"Meu despertador fez quiet quitting."
+
+],
+
+"❤️ Crush":[
+
+"Amg, aconteceu um plot twist gigantesco aqui.",
+
+"Tô parecendo personagem de série da Netflix, só derrota hoje.",
+
+"A vida resolveu lançar um DLC inesperado agora.",
+
+"Foi muito meme, depois eu te conto.",
+
+"Meu gato sumiu e fui procurar igual protagonista."
+
+],
+
+"🎮 Amigos":[
+
+"Foi de Vasco aqui em casa.",
+
+"Meu cérebro simplesmente deu ALT+F4.",
+
+"Hoje o universo tá jogando contra mim.",
+
+"Tô preso numa side quest absurda.",
+
+"Nem eu tô acreditando no caos."
+
+],
+
+"🚗 Trânsito":[
+
+"O motorista resolveu fazer turismo antes de me buscar.",
+
+"Peguei o ônibus premium: parava em todos os lugares.",
+
+"O trânsito tava parecendo lobby de GTA RP.",
+
+"Meu GPS resolveu entrar em modo criativo.",
+
+"Foi loss atrás de loss até chegar aqui."
+
+],
+
+"📚 Faculdade":[
+
+"O portal caiu bem na hora da entrega.",
+
+"Meu arquivo corrompeu exatamente quando terminei.",
+
+"O notebook desligou e levou minha dignidade junto.",
+
+"Meu cérebro entrou em greve.",
+
+"Foi um bug acadêmico sem precedentes."
+
+],
+
+"💀 Desespero":[
+
+"Tô vivendo um episódio perdido de Todo Mundo Odeia o Chris.",
+
+"A vida resolveu testar minha paciência no modo hardcore.",
+
+"O universo acordou e escolheu me desafiar.",
+
+"Entrou um boss secreto no meu dia.",
+
+"Minha sorte tá em manutenção."
+
+]
+
+};
+
+const nomes=Object.keys(categorias);
+
+let angulo=0;
+
+function random(min,max){
+
+return Math.floor(Math.random()*(max-min+1))+min;
+
+}
+
+function girar(){
+
+const indice=random(0,5);
+
+angulo+=2160+(indice*60);
+
+document.getElementById("roleta").style.transform="rotate("+angulo+"deg)";
+
+setTimeout(()=>{
+
+const categoria=nomes[indice];
+
+const lista=categorias[categoria];
+
+const frase=lista[random(0,lista.length-1)];
+
+document.getElementById("texto").innerHTML=
+"<b>"+categoria+"</b><br><br>"+frase;
+
+document.getElementById("conv").innerHTML=random(78,99)+"%";
+
+document.getElementById("risco").innerHTML=random(1,35)+"%";
+
+},4000);
+
+}
+
+</script>
+
+</body>
+</html>
+
+Manual de Utilização – Fábrica de Desculpas Perfeitas™
+Apresentação
+A Fábrica de Desculpas Perfeitas™ é uma aplicação web interativa desenvolvida em HTML, CSS e JavaScript, criada com o objetivo de demonstrar conceitos de desenvolvimento front-end por meio de uma interface divertida e dinâmica.
+O sistema simula um gerador de desculpas fictícias, utilizando uma roleta que seleciona aleatoriamente diferentes categorias de situações do cotidiano, fornecendo mensagens humorísticas para entretenimento do usuário.
+________________________________________
+Objetivo do Sistema
+O principal propósito da aplicação é oferecer uma experiência interativa que combine elementos visuais, animações e programação em JavaScript para demonstrar recursos comuns do desenvolvimento web, tais como:
+•	Manipulação do DOM;
+•	Geração de números aleatórios;
+•	Eventos de clique;
+•	Animações utilizando CSS;
+•	Atualização dinâmica de informações na página;
+•	Interface responsiva para diferentes dispositivos.
+Apesar do tema humorístico, o projeto pode ser utilizado como exemplo didático para estudos sobre interfaces web modernas.
+________________________________________
+Estrutura da Interface
+Ao acessar o site, o usuário encontrará os seguintes componentes:
+Cabeçalho
+Na parte superior é exibido:
+•	Nome da aplicação;
+•	Identificação da versão;
+•	Descrição resumida do funcionamento do sistema.
+Essa área apresenta ao usuário a proposta da plataforma antes da interação.
+________________________________________
+Botão "GIRAR A ROLETA"
+Este é o principal elemento de interação do sistema.
+Ao clicar no botão:
+•	inicia-se uma animação de rotação da roleta;
+•	o sistema realiza um sorteio aleatório;
+•	após alguns segundos, o resultado é exibido automaticamente.
+________________________________________
+Roleta de Categorias
+A roleta possui seis categorias diferentes:
+•	💼 Trabalho
+•	❤️ Crush
+•	🎮 Amigos
+•	🚗 Trânsito
+•	📚 Faculdade
+•	💀 Desespero
+Cada categoria representa um conjunto específico de desculpas humorísticas.
+A seleção é totalmente aleatória, tornando cada utilização diferente da anterior.
+________________________________________
+Painel de Estatísticas
+Após cada sorteio, o sistema atualiza dois indicadores fictícios:
+Nível de Convencimento
+Representa, em porcentagem, o quanto a desculpa aparenta ser convincente.
+Os valores são gerados aleatoriamente entre 78% e 99%.
+Chance de Descobrirem
+Exibe uma porcentagem simulando a probabilidade da desculpa ser descoberta.
+Os valores variam entre 1% e 35%.
+Esses indicadores possuem finalidade exclusivamente recreativa.
+________________________________________
+Área de Resultado
+Após o término da animação, o sistema apresenta:
+•	categoria sorteada;
+•	desculpa correspondente.
+Cada categoria possui diversas frases cadastradas, sendo escolhida uma delas de forma aleatória.
+Isso permite que o usuário obtenha diferentes resultados mesmo quando a mesma categoria é sorteada novamente.
+________________________________________
+Rodapé
+O rodapé apresenta informações ilustrativas sobre a aplicação, reforçando o caráter humorístico do projeto.
+________________________________________
+Como Utilizar
+O funcionamento do sistema é bastante simples:
+1.	Abra a página em qualquer navegador moderno.
+2.	Aguarde o carregamento completo da interface.
+3.	Clique no botão "GIRAR A ROLETA".
+4.	Observe a animação da roleta.
+5.	Aguarde aproximadamente quatro segundos.
+6.	Leia a categoria sorteada.
+7.	Visualize a desculpa gerada automaticamente.
+8.	Consulte os indicadores de convencimento e risco.
+9.	Caso deseje um novo resultado, basta clicar novamente no botão.
+Não existe limite de utilizações.
+________________________________________
+Funcionamento Interno
+O sistema utiliza JavaScript para controlar toda a lógica da aplicação.
+Durante cada execução:
+•	é selecionada aleatoriamente uma das seis categorias;
+•	uma animação de rotação é aplicada à roleta utilizando transformações em CSS;
+•	após o término da animação, o programa escolhe uma frase correspondente à categoria sorteada;
+•	os indicadores de convencimento e risco são atualizados automaticamente com novos valores aleatórios.
+Todo o processamento ocorre no navegador do usuário, não sendo necessário acesso a banco de dados ou servidor.
+________________________________________
+Tecnologias Utilizadas
+A aplicação foi desenvolvida utilizando as seguintes tecnologias:
+•	HTML5 para estruturação da página;
+•	CSS3 para estilização, responsividade e animações;
+•	JavaScript para implementação da lógica de funcionamento e interação com o usuário.
+Essas tecnologias tornam o sistema leve, rápido e compatível com os principais navegadores atuais.
+________________________________________
+Responsividade
+A interface foi projetada para adaptar-se automaticamente a diferentes tamanhos de tela.
+O sistema pode ser utilizado em:
+•	computadores;
+•	notebooks;
+•	tablets;
+•	smartphones.
+A organização dos elementos é ajustada automaticamente para proporcionar uma melhor experiência de uso.
+________________________________________
+Considerações Finais
+A Fábrica de Desculpas Perfeitas™ é uma aplicação de caráter recreativo e educacional, desenvolvida para demonstrar recursos de programação web por meio de uma interface interativa e descontraída.
+Além de proporcionar entretenimento ao usuário, o projeto serve como exemplo prático da integração entre HTML, CSS e JavaScript, evidenciando conceitos como manipulação de elementos da página, geração de conteúdo dinâmico, animações e design responsivo.
+Todas as desculpas, estatísticas e selos apresentados possuem finalidade exclusivamente humorística, não representando informações reais.
+	
